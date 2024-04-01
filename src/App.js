@@ -1,9 +1,6 @@
 import "./App.css";
 import { AddBox } from "./components/AddBox";
 import ListBox from "./components/ListBox";
-import { Friend } from "./components/Friend";
-import { useState } from "react";
-import { useSelector } from "react-redux";
 
 // 1. 왼쪽에는 연락처 등록폼, 오른쪽에는 검색창, 연락처 리스트가 있다
 // 2. 유저 이름과 전화번호 추가 가능

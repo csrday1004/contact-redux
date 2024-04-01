@@ -1,19 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { randomUsername } from "korean-random-username";
 
 export const AddBox = () => {
-
+  
   const dispatch = useDispatch() 
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [profileImg,setProfileImg]=useState("https://source.boringavatars.com/beam")
   const inputNameRef = useRef()
   const inputPhoneNumberRef = useRef()
+  const [toggle, setToggle] = useState(true)
   
   useEffect(()=>{
-
-  },[])
+    if (!name) { 
+      setName(randomUsername())
+    }
+    if(!phoneNumber){
+      setPhoneNumber('010'+Math.floor(10000000 + Math.random() * 90000000))
+    }
+  },[toggle])
   
   return (
     <Form
@@ -24,6 +31,9 @@ export const AddBox = () => {
       dispatch({type:"ADD_CONTACT", payload:{name,phoneNumber,profileImg}})
       inputNameRef.current.value=null
       inputPhoneNumberRef.current.value=null
+      setName("")
+      setPhoneNumber("")
+      setToggle(!toggle)
     }}
     >
       <Form.Group
