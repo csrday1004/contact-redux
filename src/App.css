@@ -1,38 +1,93 @@
-.App {
+.App{
+  padding: 20px
+}
+
+.ttt{
+  border: 1px solid black;
+}
+
+.title{
   text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  padding: 0 !important;
+  border: 1px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-box{
+  padding: 20px;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list-box{
+  padding: 20px;
+  width: 100%;
+  background-color: aliceblue;
   display: flex;
   flex-direction: column;
+}
+
+.count{
+  padding: 10px 0px;
+}
+
+.contacts{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+}
+
+.friend{
+  width: 100%;
+  height: 90px;
+  display: flex;
+  padding: 5px;
+  gap: 10px;
   align-items: center;
+}
+
+.friend img{
+  height: 100%;
+  width: 80px;
+  min-width: 80px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30px;
+}
+
+.name-number{
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 1px solid rgba(132, 132, 132, 0.507);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 768px){
+  .container{
+    max-width: 1000px !important;
+    height: 80vh;
   }
-  to {
-    transform: rotate(360deg);
+  .add-box{
+    width: 50%;
+  }
+  .list-box{
+    width: 50%;
+    height: 100%;
+  }
+  .contacts{
+    overflow: auto;
   }
 }
