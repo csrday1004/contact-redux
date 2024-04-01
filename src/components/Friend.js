@@ -16,7 +16,7 @@ export const Friend = ({info,index}) => {
         alt={info.name}
       />
       <div className="이름과연락처 name-number">
-        <h4 className="이름">{info.name}</h4>
+        <h5 className="이름">{info.name}</h5>
         <h6 className="연락처" style={{color:'gray'}}>{info.phoneNumber}</h6>
       </div>
       <Button variant="danger" onClick={deleteContact}>삭제</Button>
