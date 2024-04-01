@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import React, { useEffect, useRef, useState } from "react";
+import { Button, CloseButton, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Friend } from "./Friend";
 
@@ -8,6 +8,8 @@ const ListBox = () => {
   const [filteredList, setFilteredList] = useState(friends);
 
   const [search, setSearch] = useState("");
+
+  const searchRef = useRef()
 
   useEffect(() => {
     if (search) {
@@ -24,23 +26,22 @@ const ListBox = () => {
 
   return (
     <>
-      <Row>
-        <Col>
-          <Form.Group className="mb-3 " controlId="formBasicEmail">
+    
+          <div className="mb-3 search-bar" controlId="formBasicEmail">
             <Form.Control
+              ref={searchRef}
               type="text"
               placeholder="연락처 검색"
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
             />
-          </Form.Group>
-        </Col>
-        <Col>
-          <Button variant="primary">검색</Button>
-        </Col>
-      </Row>
-
+            <CloseButton className="clearSearchBtn" onClick={()=>{
+              searchRef.current.value=null
+              setSearch(null)
+            }}/>
+          </div>
+  
       <div className="연락처갯수 count">
         친구 {filteredList.length}/{friends.length}
       </div>

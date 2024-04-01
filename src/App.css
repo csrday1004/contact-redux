@@ -75,6 +75,16 @@
   border-bottom: 1px solid rgba(132, 132, 132, 0.507);
 }
 
+.search-bar{
+  position: relative;
+}
+.clearSearchBtn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
 @media (min-width: 768px){
   .container{
     max-width: 1000px !important;
